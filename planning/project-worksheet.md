@@ -14,6 +14,14 @@ I hope to be able to implement this app in my martial arts school, where sign-in
 
 Link to [Backend](https://github.com/RosmaryFC/p4backend)
 
+## User Stories
+
+- Users can log in
+- students can check in for class via a specific URL
+- admins can add, update, and remove events that will be shown on homepage
+- admins can view overall attendance percentage for students
+- All users can view homepage, where events will be located
+
 ## Project Schedule
 
 |  Day | Deliverable | Status
@@ -31,6 +39,14 @@ Link to [Backend](https://github.com/RosmaryFC/p4backend)
 
 
 ## Wireframes - STILL BEING WORKED ON
+
+Here are some pen and paper wireframes for desktop
+- [home page](https://res.cloudinary.com/rosefc/image/upload/v1600179424/project%204/home%20page%20wireframe.jpg)
+- [login/signup](https://res.cloudinary.com/rosefc/image/upload/v1600179424/project%204/login%20signup%20wireframe.jpg)
+- [check in](https://res.cloudinary.com/rosefc/image/upload/v1600179424/project%204/check%20in%20wireframe.jpg)
+- [admin dashboard](https://res.cloudinary.com/rosefc/image/upload/v1600179424/project%204/admin%20dashboard%20wireframe.jpg)
+
+---- 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Do not include the actual image and have it render on the page.  
 
 - [Mobile](https://git.generalassemb.ly/SEIR-629/project-1-portfolio/blob/master/readme-assets/mobile.png)
