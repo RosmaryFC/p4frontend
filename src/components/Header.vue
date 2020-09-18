@@ -29,12 +29,21 @@
       <template slot="end">
         <b-navbar-item tag="div">
           <div class="buttons">
-            <a class="button is-primary">
-              <strong>Sign up</strong>
-            </a>
-            <a class="button is-light">
-              Log in
-            </a>
+              <router-link to="/signup">
+                <button class="button is-primary" v-if="!loggedIn">
+                  <strong>Sign up</strong>
+                </button>
+              </router-link>
+              <router-link to="/login">
+                <button class="button is-light" v-bind:URL="URL" v-if="!loggedIn">
+                  <strong>Log in</strong>
+                </button>
+              </router-link>
+              <router-link to="/" >
+                <button class="button is-light" v-if="loggedIn" @click="logout">
+                  <strong>Log out</strong>
+                </button>
+              </router-link>
           </div>
         </b-navbar-item>
       </template>
@@ -42,13 +51,23 @@
   </div>
 </template>
 
+
 <script>
 export default {
   name: "Header",
-};
+  props: ["URL","loggedIn"],
+  methods: {
+    logout: function(){
+      this.$emit('logout') 
+    }
+  }
+}
 </script>
 
+
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Girassol&display=swap');
+
 .header {
     width: 90%;
     margin: 10px auto

@@ -118,6 +118,8 @@ Wireframing Resources:
 [Vue](https://vuejs.org/)
 [QR API](https://www.qr-code-generator.com/qr-code-api/)
 [Bootstrap](https://getbootstrap.com/)
+[Beufy](https://buefy.org/)
+[Bulma](https://bulma.io/)
 
 ## Code Snippet - STILL BEING WORKED ON
 
@@ -136,3 +138,30 @@ function reverse(string) {
 **ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
 **RESOLUTION**: Missing comma after first object in sources {} object
 
+**ERROR**: I could not run my server
+```
+Rosmarys-MacBook-Pro:p4frontend Rosemary$ npm run serve
+
+> vuetemplate@0.1.0 serve /Users/Rosemary/Documents/LagccTechHire/webDev/1 General Assembly/seir-6-29/student/unit04/week11/day05/project4/p4frontend
+> vue-cli-service serve
+
+sh: vue-cli-service: command not found
+npm ERR! code ELIFECYCLE
+npm ERR! syscall spawn
+npm ERR! file sh
+npm ERR! errno ENOENT
+npm ERR! vuetemplate@0.1.0 serve: `vue-cli-service serve`
+npm ERR! spawn ENOENT
+npm ERR! 
+npm ERR! Failed at the vuetemplate@0.1.0 serve script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/Rosemary/.npm/_logs/2020-09-17T16_42_28_965Z-debug.log
+```
+**RESOLUTION**: I ran npm update and then tried to rerun again and it worked!
+```
+Rosmarys-MacBook-Pro:p4frontend Rosemary$ npm update
+
+```
