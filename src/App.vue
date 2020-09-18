@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <Header v-bind:URL="URL" v-bind:loggedIn="loggedIn" @logout="logout"/>
+      <Header v-bind:URL="URL" v-bind:loggedIn="loggedIn" v-bind:isAdmin="isAdmin" v-bind:token="token" @logout="logout"/>
     </div>
     <router-view @loggedIn="login"/>
     <Footer/>
@@ -20,6 +20,7 @@ export default {
   },
   data:function(){
     return {
+      isAdmin:false,
       loggedIn:false,
       token:'',
       URL:'http://127.0.0.1:8000/'
@@ -27,14 +28,15 @@ export default {
   },
   methods:{
     login: function (event){
-      console.log("events heard")
       this.loggedIn = true
-      this.token = event
+      this.isAdmin = event.is_admin
+      this.token = event.token
       this.$router.push('/')
     },
     logout: function (){
       this.loggedIn = false
       this.token = ''
+      this.isAdmin = false
     }
   }
 }
