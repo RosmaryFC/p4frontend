@@ -1,16 +1,16 @@
 <template>
 <div class="login">
     <b-field label="Username"
-            type="is-success"
-            message="This username is available">
-            <b-input v-model="username"></b-input>
-        </b-field>
+        type="is-success"
+        message="This username is available">
+        <b-input v-model="username"></b-input>
+    </b-field>
 
-        <b-field label="Password">
-            <b-input type="password" 
-            v-model="password">
-            </b-input>
-        </b-field>
+    <b-field label="Password">
+        <b-input type="password" 
+        v-model="password">
+        </b-input>
+    </b-field>
     <button class="button is-danger" v-on:click="handleLogin">Log In</button>
 </div>
 </template>

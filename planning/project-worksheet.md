@@ -165,3 +165,38 @@ npm ERR!     /Users/Rosemary/.npm/_logs/2020-09-17T16_42_28_965Z-debug.log
 Rosmarys-MacBook-Pro:p4frontend Rosemary$ npm update
 
 ```
+**ERROR**: I was trying to incorporate a modal but it kept getting an error
+```
+error  The "ModalForm" component has been registered but not used  vue/no-unused-components
+
+```
+**RESOLUTION**: I at first tried to incorporate the Modal directily into the view, but i got a "component is not getting pre-rendered" error. I then created a seperate componenet for the ModalForm, and imported that component into the view  I was using it in. I still got an error. I stripped the Modal down to a basic modal and then it worked!
+
+https://stackoverflow.com/questions/59821385/component-has-been-registered-but-not-used-vue-no-unused-components
+
+
+https://forum.vuejs.org/t/vue-2-0-warn-you-are-using-the-runtime-only-build-of-vue-where-the-template-compiler-is-not-available/9429
+
+**ERROR**: I am successfully deleting my event but I get an error which will not allow my modal to close
+```
+DeleteModal.vue?ddf5:53 Uncaught (in promise) SyntaxError: Unexpected end of JSON input
+    at eval (DeleteModal.vue?ddf5:53)
+```
+I believe it is because my delete request does not give me a response back, I'm not sure why, it was working before.
+In my fetch request
+```
+	fetch(`${this.$route.query.URL}api/events/${this.event.id}/`, {
+		method: 'delete',
+		headers: {
+			authorization: `JWT ${this.token}`
+		}
+	})
+	.then(response => response.json())
+	.then(data => {
+		console.log('data', data)
+		this.isCardModalActive = false
+		this.$emit('deleteEvent', event)                        
+	})
+```
+I have response => response.json(), but there is no response so it throws an error
+**RESOLUTION**: I fixed my delete request method to return a response. 
