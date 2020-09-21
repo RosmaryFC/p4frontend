@@ -1,14 +1,15 @@
 <template>
     <div>
+        <div class="admin-header">
         <h1>ADMIN DASHBOARD</h1>
-        <Collapse />
         <ModalForm id="event-create" :token="token" request="post" btnname="Create Event" @createEvent="createEvent"/>
-
+        </div>
         <div class="events-container">
             <div class="event-item" v-for="event of events" v-bind:key="event.id">
                 <p class="event-title">{{event.name}}</p>
                 <div class="event-image">
                     <!-- TODO: add event.img here -->
+                    <img class="image" v-bind:src="event.flyer"/>
                 </div>
                 <ul class="event-info">
                     <li>Date: {{event.date}}</li>
@@ -25,16 +26,14 @@
 
 
 <script>
-import Collapse from '../components/Collapse.vue'
 import ModalForm from '../components/ModalForm.vue'
 import DeleteModal from '../components/DeleteModal.vue'
 
 export default {
     name:"AdminDashboard",
     components: {
-        Collapse,
         ModalForm,
-        DeleteModal
+        DeleteModal,
     },
     data: function() {
         return {
@@ -47,13 +46,13 @@ export default {
         }
     },
     created: function(){
-        const {token, URL} = this.$route.query
+        const {token} = this.$route.query
         this.token = token
-        this.URL = URL
+        this.URL = this.$URL
         console.log("token", token)
-        console.log("URL", `${URL}api/events/`)
+        console.log("URL", `${this.URL}api/events/`)
         //create fetch to get all events
-        fetch(`${URL}api/events/`, {
+        fetch(`${this.URL}api/events/`, {
             method:'get',
             headers: {
                 authorization: `JWT ${this.token}`
@@ -114,8 +113,18 @@ export default {
 
 <style>
 
+.admin-header {
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px 30px;
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
 .events-container {
-    border: 2px solid gold;
+    /* border: 2px solid gold; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -125,7 +134,7 @@ export default {
 .event-item {
     flex: 1 0 45%;
     margin: 10px;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -133,14 +142,21 @@ export default {
 } 
 
 .event-image {
-    border: 2px solid red;
-    width: 500px;
-    height: 500px;
+    /* border: 2px solid red; */
+    border-radius: 10px;
+    width: 400px;
+    height: 600px;
     background-position: center;
     background-size: cover;
-    background-color: gray;
+    background-color: lightgray;
+    background-image: url('../assets/noimage.png');
+    margin: auto;
 }
 
-
+.image {
+    max-width:100%;
+    max-height: 100%;
+    margin: auto;
+}
 
 </style>

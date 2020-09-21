@@ -200,3 +200,49 @@ In my fetch request
 ```
 I have response => response.json(), but there is no response so it throws an error
 **RESOLUTION**: I fixed my delete request method to return a response. 
+
+**ERROR**: my switch element was showing whether user was logged in or not.
+```
+home token:  
+Home.vue?76f2:60 home loggedIn:  false
+Home.vue?76f2:61 home $URL: http://127.0.0.1:8000/
+Home.vue?76f2:65 home token:  
+Home.vue?76f2:66 home loggedIn:  false
+Home.vue?76f2:77 events (4) [{…}, {…}, {…}, {…}, __ob__: Observer]
+Home.vue?76f2:59 home token:  
+Home.vue?76f2:60 home loggedIn:  false
+Home.vue?76f2:61 home $URL: http://127.0.0.1:8000/
+Home.vue?76f2:66 home token:  
+Home.vue?76f2:67 home loggedIn:  false <---ACTUAL BOOLEAN
+Home.vue?76f2:78 events (4) [{…}, {…}, {…}, {…}, __ob__: Observer]
+Home.vue?76f2:59 home token:  
+Home.vue?76f2:60 home loggedIn:  false
+Home.vue?76f2:61 home $URL: http://127.0.0.1:8000/
+Home.vue?76f2:66 home token:  
+Home.vue?76f2:67 home loggedIn:  true <-------ACTUAL BOOLEAN
+Home.vue?76f2:78 events (4) [{…}, {…}, {…}, {…}, __ob__: Observer]
+Home.vue?76f2:59 home token:  
+Home.vue?76f2:60 home loggedIn:  false
+Home.vue?76f2:61 home $URL: http://127.0.0.1:8000/
+Home.vue?76f2:65 home token:  
+Home.vue?76f2:66 home loggedIn:  false
+Home.vue?76f2:77 events (4) [{…}, {…}, {…}, {…}, __ob__: Observer]
+```
+**RESOLUTION**: I tested it by manually adding a true statement and a false statement. I realized that the reason the boolean wasn't working was because it was acually a string!
+
+https://codippa.com/how-to-convert-string-to-boolean-javascript/#:~:text=JSON%20is%20a%20built%2Din,as%20true%20and%20false%20otherwise.
+
+
+**ERROR**: I could not get the on click for a beufy switch to register
+```
+<b-switch :value="checkAttendance(event)" v-on:click="updateAttendance(event)" type="is-success">
+attended
+</b-switch>
+```
+**RESOLUTION**: After some research, I realized I should have read the documentation for the switch on beufy, it says to use click.native in order to get the on click to work
+https://buefy.org/documentation/switch
+```
+<b-switch :value="checkAttendance(event)" v-on:click.native="updateAttendance(event)" type="is-success">
+attended
+</b-switch>
+```

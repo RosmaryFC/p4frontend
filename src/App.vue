@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <Header v-bind:URL="URL" v-bind:loggedIn="loggedIn" v-bind:isAdmin="isAdmin" v-bind:token="token" @logout="logout"/>
+      <Header v-bind:URL="URL" v-bind:loggedIn="loggedIn" v-bind:username="username" v-bind:isAdmin="isAdmin" v-bind:token="token" @logout="logout"/>
     </div>
-    <router-view @loggedIn="login"/>
+    <router-view v-bind:url="URL" @loggedIn="login"/>
     <Footer/>
   </div>
 </template>
@@ -23,20 +23,63 @@ export default {
       isAdmin:false,
       loggedIn:false,
       token:'',
+      username: '',
       URL:'http://127.0.0.1:8000/'
     }
   },
+  created: function() {
+    this.$router.push({
+      // TODO: remove after debug!
+      path:"/",
+      query: {
+        token: this.token,
+        URL: this.URL,
+        loggedIn: this.loggedIn
+      }
+    })
+  },
   methods:{
     login: function (event){
+      console.log("login function in app.vue")
       this.loggedIn = true
       this.isAdmin = event.is_admin
       this.token = event.token
-      this.$router.push('/')
+      this.username = event.username
+      if(this.isAdmin) {
+      this.$router.push({
+        path:"AdminDashboard",
+        query: {
+          token: this.token,
+          loggedIn: this.loggedIn,
+          username: this.username
+        }
+      })
+      }else {
+        this.$router.push({
+        path:"/UserDashboard",
+        query: {
+          token: this.token,
+          loggedIn: this.loggedIn,
+          username: this.username
+        }
+      })
+      }
+
     },
     logout: function (){
+      console.log("logout function in app.vue")
       this.loggedIn = false
       this.token = ''
       this.isAdmin = false
+      this.username = ''
+      this.$router.push({
+        path:"/",
+        query: {
+          token: '',
+          loggedIn: false,
+          username: ''
+        }
+      })
     }
   }
 }

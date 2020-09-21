@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Page2 from '../views/Page2.vue'
 import Signup from '../views/Signup.vue'
 import Login from '../views/Login.vue'
 import AdminDashboard from '../views/AdminDashboard'
+import UserDashbaord from '../views/UserDashboard'
 
 Vue.use(VueRouter)
 
@@ -31,10 +31,10 @@ Vue.use(VueRouter)
     component: AdminDashboard
   },
   {
-    path: '/page2',
-    name: 'Page2',
-    component: Page2
-  },
+    path:'/userdashboard',
+    name:'UserDashboard',
+    component: UserDashbaord
+  }
 ]
 
 const router = new VueRouter({

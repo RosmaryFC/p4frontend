@@ -1,6 +1,6 @@
 <template>
     <section>
-        <button class="button is-primary is-medium"
+        <button class="button is-primary "
             @click="isCardModalActive = true">
             {{btnname}}
         </button>
@@ -15,9 +15,9 @@
                             <b-input value="Kevin Garvey" v-model="type"></b-input>
                         </b-field>
                         <!-- TODO: add image url field -->
-                        <!-- <b-field label="Image URL">
-                            <b-input value="Kevin Garvey"></b-input>
-                        </b-field> -->
+                        <b-field label="Flyer">
+                            <b-input value="Kevin Garvey" v-model="flyer"></b-input>
+                        </b-field>
                         <b-field label="Date">
                             <b-input value="Kevin Garvey" v-model="date"></b-input>
                         </b-field>
@@ -60,7 +60,7 @@
                 price:0,
                 address:'',
                 type:'',
-                imageUrl: '',
+                flyer: '',
             }
         },
         created: function(){
@@ -77,6 +77,7 @@
                 this.price = this.event.price
                 this.address = this.event.address
                 this.type = this.event.type
+                this.flyer = this.event.flyer
             }
         },
         methods: {
@@ -90,6 +91,7 @@
                     time: this.time,
                     price: Number(this.price),
                     address: this.address,
+                    flyer: this.flyer,
                 }
 
                 console.log("event", event)
@@ -98,9 +100,9 @@
 
                 if(this.request == 'post') {
                     //new event will be created
-                    console.log("URL",`${this.$route.query.URL}api/events/`)
+                    console.log("URL",`${this.$URL}api/events/`)
 
-                    fetch(`${this.$route.query.URL}api/events/`, {
+                    fetch(`${this.$URL}api/events/`, {
                     method: this.request,
                     headers: {
                         "Content-Type": "application/json",
@@ -118,9 +120,9 @@
 
                 if(this.request == 'put') {
                     //an existing event will be updated
-                    console.log("URL", `${this.$route.query.URL}api/events/${this.event.id}/`)
+                    console.log("URL", `${this.$URL}api/events/${this.event.id}/`)
 
-                    fetch(`${this.$route.query.URL}api/events/${this.event.id}/`, {
+                    fetch(`${this.$URL}api/events/${this.event.id}/`, {
                         method: this.request,
                         headers: {
                             "Content-Type": "application/json",

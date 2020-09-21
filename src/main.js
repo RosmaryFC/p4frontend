@@ -6,6 +6,8 @@ import "buefy/dist/buefy.css";
 
 Vue.use(Buefy);
 
+Vue.prototype.$URL = "http://127.0.0.1:8000/"
+
 Vue.config.productionTip = false;
 
 new Vue({

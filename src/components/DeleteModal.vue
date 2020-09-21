@@ -1,6 +1,6 @@
 <template>
     <section>
-        <button class="button is-danger is-medium"
+        <button class="button is-danger"
             @click="isCardModalActive = true">
             Delete
         </button>
@@ -23,7 +23,6 @@
                     </div>
                 </div>
             </div>
-
         </b-modal>
     </section>
 </template>
@@ -42,9 +41,9 @@ export default {
             console.log("save/delete")
             console.log("token", this.token)
             console.log("event id", this.event.id)
-            console.log("URL", `${this.$route.query.URL}api/events/${this.event.id}/`)
+            console.log("URL", `${this.$URL}api/events/${this.event.id}/`)
 
-            fetch(`${this.$route.query.URL}api/events/${this.event.id}/`, {
+            fetch(`${this.$URL}api/events/${this.event.id}/`, {
                 method: 'delete',
                 headers: {
                     authorization: `JWT ${this.token}`
