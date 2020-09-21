@@ -6,7 +6,7 @@ import "buefy/dist/buefy.css";
 
 Vue.use(Buefy);
 
-Vue.prototype.$URL = "https://rf-p4backend.herokuapp.com/"
+Vue.prototype.$URL = "http://127.0.0.1:8000/"
 
 Vue.config.productionTip = false;
 
