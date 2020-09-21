@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>USER DASHBOARD</h1>
+    <h1 class="vue-header">USER DASHBOARD</h1>
     <section>
       <h1>EVENTS</h1>
       <!-- events container inherits syle from admin dashboard due to same class names :O!-->
@@ -58,7 +58,7 @@ export default {
     this.getEvents()
   },
   updated: function () {
-    console.log("updated function in home.vue")
+    console.log("updated function in UserDashboard.vue")
   },
   methods: {
     getEvents: function() {
@@ -109,8 +109,9 @@ export default {
         .then(response => response.json())
         .then(data => {
           console.log(data)
+          this.getEvents()
         })
-        return true
+        // return true
       }else {
         // TODO: delete user attendance for specific event
         let attendance_id = attendanceobj.id
@@ -124,8 +125,9 @@ export default {
         .then(response => response.json())
         .then(data => {
           console.log("deleted user", data)
+          this.getEvents()
         })
-        return false
+        // return false
       }
     }
   }

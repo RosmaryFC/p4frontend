@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="admin-header">
-        <h1>ADMIN DASHBOARD</h1>
+        <h1 class="vue-header" >ADMIN DASHBOARD</h1>
         <ModalForm id="event-create" :token="token" request="post" btnname="Create Event" @createEvent="createEvent"/>
         </div>
         <div class="events-container">

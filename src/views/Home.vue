@@ -3,8 +3,6 @@
     <h1>HOME</h1>
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Another Page changed to Welcome to your Vue.js App"/>
-    <Collapse/>
-
     <!-- TODO upload carousel images -->
     <Carousel />
     <!-- TODO: create ABOUT ME -->
@@ -33,15 +31,13 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '../components/HelloWorld.vue'
-import Collapse from '../components/Collapse.vue'
 import Carousel from '@/components/Carousel.vue'
 
 export default {
   name: 'Home',
   components: {
     HelloWorld,
-    Carousel,
-    Collapse
+    Carousel
   },
   data: function () {
     return {
