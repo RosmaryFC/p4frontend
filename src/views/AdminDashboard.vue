@@ -50,9 +50,9 @@ export default {
         this.token = token
         this.URL = this.$URL
         console.log("token", token)
-        console.log("URL", `${this.URL}api/events/`)
+        console.log("URL", `${this.$URL}api/events/`)
         //create fetch to get all events
-        fetch(`${this.URL}api/events/`, {
+        fetch(`${this.$URL}api/events/`, {
             method:'get',
             headers: {
                 authorization: `JWT ${this.token}`
@@ -70,7 +70,7 @@ export default {
         },
         readEvents: function() {
             //create fetch to get all events
-            fetch(`${URL}api/events/`, {
+            fetch(`${this.$URL}api/events/`, {
                 method:'get',
                 headers: {
                     authorization: `JWT ${this.token}`

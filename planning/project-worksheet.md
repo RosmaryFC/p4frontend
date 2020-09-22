@@ -4,11 +4,13 @@
 
 For project four of the General Assembly SEi course, I will be creating a full CRUD web application. I will create the frontend using Vue.
 
-I will build a check in app for students that keeps track of their attendance  Students will check in to every class they attend via a username and password that they will create. There will be a home page where users can see all the events listed. When an Admin is signed in, they will have access to the admin dashboard where they can create, update, and delete an event. Admin will be able to see the percentage of attendance each student has. 
+I will build a check in app for students that keeps track of their attendance for events.  Students will check in to every event they attend through the student dashboard via a username and password that they will create. There will be a home page where users can see all the events listed. When an Admin is signed in, they will have access to the admin dashboard where they can create, update, and delete an event.
 
-PostMVP will include adding a pin to sign in, as well as using the QR code generator API to have students log in by scanning a QR code from their phone. Post MVP will also include Admins being able to check off events that they have gone to.
+PostMVP will include adding a pin to sign in for classes, as well as using the QR code generator API to have students log in by scanning a QR code from their phone. Post MVP will also include Admins being able to check off events that they have gone to.
 
-A big influence for this project are check-ins for gyms, where a member would scan their keychain before entering the gym area.
+A bg influence for this projects MVP are sites like [meetup](https://www.meetup.com/) where you can see who attended an event.
+
+A big influence for this projects post MVP are check-ins for gyms, where a member would scan their keychain before entering the gym area.
  
 I hope to be able to implement this app in my martial arts school, where sign-ins are made via pen and paper in a notebook. The instructor must manually review 3,6, or 12 months worth of entries for each student when it's time to take the test. By automating this process, it will be easier to track the students attendance.
 
@@ -17,9 +19,8 @@ Link to [Backend](https://github.com/RosmaryFC/p4backend)
 ## User Stories
 
 - Users can log in
-- students can check in for class via a specific URL
-- admins can add, update, and remove events that will be shown on homepage
-- admins can view overall attendance percentage for students
+- Students can update their attendance for events they have attended via the student dashboard
+- Admins can add, update, and remove events via the admin dashboard 
 - All users can view homepage, where events will be located
 
 ## Project Schedule
@@ -28,35 +29,23 @@ Link to [Backend](https://github.com/RosmaryFC/p4backend)
 |---|---| ---|
 |Fri-Sun, Sept 11-13, 2020 (Day 1-3)  | Project Description | Complete
 |Mon, Sept 14, 2020 (Day 4)           | Wireframes / Priority Matrix / Timeline `backend` and `frontend`| Complete
-|Mon-Tues, Sept 14-15, 2020 (Day 4-5) | Backend: RestAPI MVP| Incomplete
-|Mon-Tues, Sept 14-15, 2020 (Day 4-5) | Frontend: Home page / Login Modal | Incomplete
-|Wed, Sept 16, 2020 (Day 6)           | Frontend: check-in page / Admin page| Incomplete
-|Thurs, Sept 17, 2020 (Day 7)         | Frontend: CSS, MVP, bug fixes | Incomplete
-|Fri-Sat, Sept 18, 2020 (Day 8-9)     | Post-MVP backend/frontend | Incomplete
-|Sun, Sept 20, 2020 (Day 8)           | Update documentation | Incomplete
-|Mon, Sept 21, 2020 (Day 8)           | Final Touches| Incomplete
+|Mon-Tues, Sept 14-15, 2020 (Day 4-5) | Backend: RestAPI MVP| Complete
+|Mon-Tues, Sept 14-15, 2020 (Day 4-5) | Frontend: Home page / Login Modal | Complete
+|Wed, Sept 16, 2020 (Day 6)           | Frontend: User page / Admin page| Complete
+|Thurs, Sept 17, 2020 (Day 7)         | Frontend: CSS, MVP, bug fixes | Complete
+|Fri-Sat, Sept 18, 2020 (Day 8-9)     | Post-MVP backend/frontend | Partial complete
+|Sun, Sept 20, 2020 (Day 8)           | Update documentation | Complete
+|Mon, Sept 21, 2020 (Day 8)           | Final Touches| Complete
 |Tues, Sept 22, 2020 (Day 11)         | Present | Incomplete
 
 
-## Wireframes - STILL BEING WORKED ON
+## Wireframes -
 
 Here are some pen and paper wireframes for desktop
 - [home page](https://res.cloudinary.com/rosefc/image/upload/v1600179424/project%204/home%20page%20wireframe.jpg)
 - [login/signup](https://res.cloudinary.com/rosefc/image/upload/v1600179424/project%204/login%20signup%20wireframe.jpg)
 - [check in](https://res.cloudinary.com/rosefc/image/upload/v1600179424/project%204/check%20in%20wireframe.jpg)
 - [admin dashboard](https://res.cloudinary.com/rosefc/image/upload/v1600179424/project%204/admin%20dashboard%20wireframe.jpg)
-
----- 
-Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Do not include the actual image and have it render on the page.  
-
-- [Mobile](https://git.generalassemb.ly/SEIR-629/project-1-portfolio/blob/master/readme-assets/mobile.png)
-- [Tablet](https://git.generalassemb.ly/SEIR-629/project-1-portfolio/blob/master/readme-assets/nav-highlight.gif)
-- [Desktop](https://git.generalassemb.ly/SEIR-629/project-1-portfolio/blob/master/readme-assets/desktop.png)
-
-Wireframing Resources:
-
-- [Mockflow](https://mockflow.com/app/#Wireframe)
-- [Figma](https://www.figma.com/)
 
 
 ## Time/Priority Matrix
@@ -68,23 +57,25 @@ Wireframing Resources:
 #### MVP 
 
 - Student: Create an Account
-- Student: check-in to class
+- Student: update attendance for event
 - Student: Log in
 - Admin: Create an Account
 - Admin: Log in
-- Admin: Access Admin dashboard - can see student status
-- Admin: Create/Remove/Update/Delete Event
+- Admin: Access Admin dashboard - can see events edit area
+- Admin: Create/Read/Update/Delete Event
 - Navigation Bar with Hamburger menu
 - Mobile responsiveness first
 - Deploy to netlify
 - Homepage: Navbar, Footer, carousel, About, Events
-- Create User/ Login page: Navbar, Footer, Login Module, Sign up Module
-- Check in page: Navbar, Footer, check in module, list of checked in students
-- Admin dashboard: student status list, add upcoming event
+- Create User/ Login page: Navbar, Footer, Login Module, Sign up or login area
+- Admin dashboard: admins can update events here
+- User dashboard: students can update their attendance here
+
 
 #### PostMVP 
 
 - User profile page with their progress status
+- Attendance for classes
 - Login: PIN
 - Login: QR code
 - Admin can select which students attended event 
@@ -94,45 +85,96 @@ Wireframing Resources:
 #### MVP
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Navbar with Hamburger       | H | 1hr | -hr | -hr|
-| Deploying Frontend          | H | .25hr | .25hr | -hr|
-| Mobile Responsiveness       | H | 3hr | -hr | -hr|
-| Home Page                   | M | 4hr| -hr | -hr |
-| Check In Page               | M | 2hr | 2hr | -hr|
-| Log in                      | H | 1hrs| 2hr | -hr |
-| Sign up                     | H | 1hr | -hr | -hr|
-| Admin Page                  | H | 4hr | -hr | -hr|
-| Total                       |   | 16hrs| -hrs | -hrs |
+| Navbar with Hamburger       | H | 1hr | 0hr | 0hr|
+| Deploying Frontend          | H | .25hr | .25hr | -.25hr|
+| Mobile Responsiveness       | H | 3hr | .5hr | .5hr|
+| Home Page                   | M | 4hr| 6hr | 6hr |
+| User Profile Page           | M | 2hr | 10hr | 10hr|
+| Log in Page                 | H | 1hrs| 2hr | 2hr |
+| Sign up                     | H | 1hr | 4hr | 4hr|
+| Admin Page                  | H | 4hr | 10hr | 10hr|
+| Total                       |   | 16hrs| 32.75hrs | 32.75hrs |
 
 #### PostMVP
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Refactor                                     | L | 3hr | -hr | -hr|
-| User Profile                                 | M | 2hr | -hr | -hr|
+| Refactor                                     | L | 3hr | 2hr | 2hr|
+| Check-in                                     | L | 2hr | -hr | -hr|
 | Login: PIN                                   | L | 1hr | -hr | -hr|
-| Login: QR Code                               | M | 4hr | -hr | -hr|
-| Admin can select which students attend event | L | 4hr | -hr | -hr|
-| Total                                        |   | 14hrs| -hrs | -hrs |
+| Login: QR Code                               | L | 4hr | -hr | -hr|
+| Admin can view checkin attendance            | L | 4hr | -hr | -hr|
+| Total                                        |   | 14hrs| 2hrs | 2hrs |
 
 ## Additional Libraries 
-[Vue](https://vuejs.org/)
+
+MVP
+- [Merced-vuer](https://github.com/AlexMercedCoder/merced-vuer) - This is a command-line tool for generating Vue projects with router and the Buefy component library made by one of my amazing instructors [Alex Merced](https://www.alexmercedcoder.com/jslib/).
+- [Beufy](https://buefy.org/)
+- [Bulma](https://bulma.io/)
+- [Vue](https://vuejs.org/v2/guide/)
+- [Vue Router](https://router.vuejs.org/)
+
+
+POST MVP
+
 [QR API](https://www.qr-code-generator.com/qr-code-api/)
-[Bootstrap](https://getbootstrap.com/)
-[Beufy](https://buefy.org/)
-[Bulma](https://bulma.io/)
+
 
 ## Code Snippet - STILL BEING WORKED ON
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
+Below is the template of a custom vue component that I built. I'm proud of it because I made it re-usable for creating and updating events! I learned how to pass data up and down from a parent vue to a child vue. I also learned how to incorporate my own componenets! 
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+<template>
+    <section>
+        <button class="button is-primary "
+            @click="isCardModalActive = true">
+            {{btnname}}
+        </button>
+        <b-modal v-model="isCardModalActive" :width="640" scroll="keep">
+            <div class="card">
+                <div class="card-content">
+                    <section>
+                        <b-field label="Title">
+                            <b-input value="Kevin Garvey" v-model="name"></b-input>
+                        </b-field>
+                        <b-field label="Type">
+                            <b-input value="Kevin Garvey" v-model="type"></b-input>
+                        </b-field>
+                        <b-field label="Flyer">
+                            <b-input value="Kevin Garvey" v-model="flyer"></b-input>
+                        </b-field>
+                        <b-field label="Date">
+                            <b-input value="Kevin Garvey" v-model="date"></b-input>
+                        </b-field>
+                        <b-field label="Time">
+                            <b-input value="Kevin Garvey" v-model="time"></b-input>
+                        </b-field>
+                        <b-field label="Price" >
+                            <b-input value="Kevin Garvey" v-model="price"></b-input>
+                        </b-field>
+                        <b-field label="Address">
+                            <b-input value="Kevin Garvey" v-model="address"></b-input>
+                        </b-field>
+                    </section>
+                </div>
+                <button class="button is-primary is-medium"
+                @click="saveModal">
+                    Save
+                </button>
+                <button class="button is-primary is-medium"
+                @click="closeModal">
+                    Close
+                </button>
+            </div>
+
+        </b-modal>
+
+    </section>
+</template>
 ```
 
 ## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
 
 #### SAMPLE.....
 **ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                

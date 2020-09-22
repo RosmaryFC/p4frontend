@@ -45,7 +45,7 @@
                   <strong>Sign up</strong>
                 </button>
               </router-link>
-              <router-link :to="{ name: 'Login', query: { URL: this.URL}}" v-bind:URL="URL">
+              <router-link :to="{name: 'Login'}">
                 <button class="button is-light" v-if="!loggedIn">
                   <strong>Log in</strong>
                 </button>

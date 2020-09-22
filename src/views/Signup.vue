@@ -77,6 +77,7 @@ export default {
             }else {
                 canCreateUser = false
             }
+            console.log("handlesignup cancreateuser: ", canCreateUser)
 
             const userobj = {
                 username : this.username,
@@ -95,20 +96,43 @@ export default {
                     },
                     body: JSON.stringify(userobj)
                 })
-                .then(response => response.json())
+                .then(response => {
+                    if(!response.ok) {
+                        throw new Error(response.json())
+                    }
+                    return response.json()
+                })
                 .then(data => {
-                    console.log(data)
-                    this.$emit('loggedIn', data)
+                    console.log('data', data)
+                    
+                    this.$buefy.toast.open({
+                    message: `User ${data.username} created successfully!`,
+                    type: 'is-success'
+                    })
+
+                     this.$emit('loggedIn', data)
+                })
+                .catch(error => {
+                    console.log('error caught', error)
+                        // 400 error
+                        this.secret_code = ''
+                        this.username = ''
+                        this.password = ''
+                        this.first_name = ''
+                        this.last_name = ''
+                        this.email = ''
+                        this.is_admin = false
+                        this.alertCustomError('Seems like there was an error creating a user, try a different username, email, or password!')
                 })
             }else {
-                this.alertCustomError()
+                this.alertCustomError('Sorry! You have to be enrolled in the school to create an account. <br> <br> Use code <b>HIRALDOKAI</b> <br> on enrollment, for your first month free when you sign up for a year!')
             }
 
         },
-        alertCustomError() {
+        alertCustomError(msg) {
                 this.$buefy.dialog.alert({
                     title: 'Error',
-                    message: 'Sorry! You have to be enrolled in the school to create an account. <br> <br> Use code <b>HIRALDOKAI</b> <br> on enrollment, for your first month free when you sign up for a year!',
+                    message: msg,
                     type: 'is-danger',
                     hasIcon: true,
                     icon: 'times-circle',
