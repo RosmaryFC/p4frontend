@@ -31,27 +31,27 @@
         <b-navbar-item tag="div">
           <div class="buttons">
               <router-link :to="{ name: 'AdminDashboard', query: {token:this.token, isAdmin:this.isAdmin}}" v-bind:token="token" v-bind:isAdmin="isAdmin">
-                <button class="button is-primary" v-if="isAdmin && loggedIn">
+                <button class="header-b button is-warning" v-if="isAdmin && loggedIn">
                   <strong>Admin Dashboard</strong>
                 </button>
               </router-link>
               <router-link :to="{ name: 'UserDashboard', query: {token:this.token, isAdmin:this.isAdmin, loggedIn: this.loggedIn, username: this.username}}" v-bind:token="token" v-bind:isAdmin="isAdmin" v-bind:loggedIn="loggedIn" v-bind:username="this.username">
-                <button class="button is-primary" v-if="loggedIn">
+                <button class="header-b button is-warning" v-if="loggedIn">
                   <strong>User Dashboard</strong>
                 </button>
               </router-link>
               <router-link to="/signup">
-                <button class="button is-primary" v-if="!loggedIn">
+                <button class="header-b button is-dark" v-if="!loggedIn">
                   <strong>Sign up</strong>
                 </button>
               </router-link>
               <router-link :to="{name: 'Login'}">
-                <button class="button is-light" v-if="!loggedIn">
+                <button class="header-b button is-light" v-if="!loggedIn">
                   <strong>Log in</strong>
                 </button>
               </router-link>
               <router-link to="/" >
-                <button class="button is-light" v-if="loggedIn" @click="logout">
+                <button class="header-b button is-light" v-if="loggedIn" @click="logout">
                   <strong>Log out</strong>
                 </button>
               </router-link>
@@ -93,8 +93,12 @@ export default {
 
 span.logo {
   font-family: 'Girassol';
-  font-size: 1.5em;
+  font-size: 2em;
+  color: #E02427;
 }
 
+.header-b {
+  margin: 5px;
+}
 
 </style>

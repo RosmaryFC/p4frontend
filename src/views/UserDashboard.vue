@@ -1,22 +1,21 @@
 <template>
-  <div class="home">
-    <h1 class="vue-header">USER DASHBOARD</h1>
+  <div class="userdashboard">
+    <h1 class="heading title is-2">USER DASHBOARD</h1>
     <section>
-      <h1>EVENTS</h1>
+      <h1 class="heading title is-3">EVENTS</h1>
       <!-- events container inherits syle from admin dashboard due to same class names :O!-->
-      <div class="events-container">
-        <div class="event-item" v-for="event of events" v-bind:key="event.id">
-          <p class="event-title">{{event.name}}</p>
-          <div class="event-image">
-                <!-- TODO: add event.img here -->
-            <img class="image" v-bind:src="event.flyer"/>
-          </div>
-          <ul class="event-info">
-            <li>Date: {{event.date}}</li>
-            <li>Time: {{event.time}}</li>
-            <li>Price: {{event.price}}</li>
-            <li>Address: {{event.address}}</li>
-          </ul>
+        <div class="events-container">
+            <div class="box event-item" v-for="event of events" v-bind:key="event.id">
+                <p class="event-title title is-5 ">{{event.name}}</p>
+                <div class="event-image">
+                    <img class="image" v-bind:src="event.flyer"/>
+                </div>
+                <ul class="event-info">
+                    <li class="item subtitle is-6"><strong>Date:</strong> {{event.date}}</li>
+                    <li class="item subtitle is-6"><strong>Time:</strong> {{event.time}}</li>
+                    <li class="item subtitle is-6"><strong>Price:</strong> {{event.price}}</li>
+                    <li class="item subtitle is-6"><strong>Address:</strong> {{event.address}}</li>
+                </ul>
           <div class="field" v-if="loggedIn" >
               <b-switch :value="checkAttendance(event)" v-on:click.native="updateAttendance(event)" type="is-success">
                 attended
@@ -134,3 +133,10 @@ export default {
 }
 
 </script>
+
+<style>
+.userdashboard {
+  width: 70%;
+  margin: 10px auto;
+}
+</style>

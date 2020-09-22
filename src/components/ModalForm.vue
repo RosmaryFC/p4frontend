@@ -1,12 +1,13 @@
 <template>
-    <section>
-        <button class="button is-primary "
+    <section class="modal-form">
+        <button class="button is-dark is-medium is-fullwidth"
             @click="isCardModalActive = true">
-            {{btnname}}
+            <strong>{{btnname}}</strong>
         </button>
         <b-modal v-model="isCardModalActive" :width="640" scroll="keep">
             <div class="card">
                 <div class="card-content">
+                    <h1 class="title">{{btnname}}</h1>
                     <section>
                         <b-field label="Title">
                             <b-input value="Kevin Garvey" v-model="name"></b-input>
@@ -14,7 +15,6 @@
                         <b-field label="Type">
                             <b-input value="Kevin Garvey" v-model="type"></b-input>
                         </b-field>
-                        <!-- TODO: add image url field -->
                         <b-field label="Flyer">
                             <b-input value="Kevin Garvey" v-model="flyer"></b-input>
                         </b-field>
@@ -32,13 +32,13 @@
                         </b-field>
                     </section>
                 </div>
-                <button class="button is-primary is-medium"
+                <button class="button is-dark is-medium modalbtn"
                 @click="saveModal">
-                    Save
+                    <strong>Save</strong>
                 </button>
-                <button class="button is-primary is-medium"
+                <button class="button is-light is-medium modalbtn"
                 @click="closeModal">
-                    Close
+                    <strong>Close</strong>
                 </button>
             </div>
 
@@ -140,11 +140,30 @@
             },
             closeModal: function() {
                 console.log("close")
+                this.clearfields()
                 this.isCardModalActive = false
             },
+            clearfields: function() {
+                this.date= ''
+                this.name=''
+                this.time= ''
+                this.price= 0
+                this.address= ''
+                this.type= ''
+                this.flyer= ''
+            }
         }
     }
 </script>
 
 <style>
+.modal-form {
+    width: 70%;
+    margin: 10px auto;
+}
+
+.modalbtn {
+    margin: 5px;
+}
+
 </style>

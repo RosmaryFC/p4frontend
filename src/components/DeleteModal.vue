@@ -1,24 +1,25 @@
 <template>
-    <section>
-        <button class="button is-danger"
+    <section class="deletemodal">
+        <button class="button is-danger is-medium is-fullwidth"
             @click="isCardModalActive = true">
-            Delete
+            <strong>Delete</strong>
         </button>
         <b-modal v-model="isCardModalActive" :width="640">
             <div class="card">
                 <div class="card-content">
                     <section>
-                        <h2>Delete Eveent</h2>
+                        <h2 class="title">Delete Event</h2>
                         <p>Are you sure you want to delete this event? It cannot be undone</p>
+                        <br>
                     </section>
                     <div>
-                        <button class="button is-danger is-medium"
+                        <button class="button is-danger is-medium modalbtn"
                             @click="saveModal">
-                            Delete
+                            <strong>Delete</strong>
                         </button>
-                        <button class="button is-primary is-medium"
+                        <button class="button is-dark is-medium modalbtn"
                             @click="closeModal">
-                                Close
+                                <strong>Close</strong>
                         </button>
                     </div>
                 </div>
@@ -65,4 +66,8 @@ export default {
 </script>
 
 <style>
+.deletemodal {
+    width: 70%;
+    margin: 10px auto;
+}
 </style>

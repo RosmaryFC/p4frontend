@@ -1,17 +1,17 @@
 <template>
 <div class="login">
-    <b-field label="Username"
-        type="is-success"
-        message="This username is available">
-        <b-input v-model="username"></b-input>
-    </b-field>
+    <h1 class="heading title is-2">Log In </h1>
 
-    <b-field label="Password">
-        <b-input type="password" 
-        v-model="password">
-        </b-input>
-    </b-field>
-    <button class="button is-danger" v-on:click="handleLogin">Log In</button>
+    <div class="fields-container">
+        <b-field label="Username">
+            <b-input v-model="username"></b-input>
+        </b-field>
+        <b-field label="Password">
+            <b-input type="password" v-model="password"></b-input>
+        </b-field>
+    </div>
+    
+    <button class="button is-dark" v-on:click="handleLogin"><strong>Log In</strong></button>
 </div>
 </template>
 
@@ -27,6 +27,10 @@ export default {
     },
     methods: {
         handleLogin: function(){
+            if(this.username === '' || this.password === '') {
+                this.alertCustomError('fields cannot be blank!')
+            }
+
             fetch(`${this.$URL}auth/users/login/`, {
                 method:'post',
                 headers: {
@@ -37,11 +41,32 @@ export default {
                     password: this.password,
                 }),
             })
-            .then(response => response.json())
+            .then(response => {
+                if(!response.ok) {
+                    throw new Error(response.json())
+                }
+                return response.json()
+            })            
             .then(data => {
                 this.$emit('loggedIn', data)
             })
-        }
+            .catch(error => {
+                console.log("error caught", error)
+                this.alertCustomError('Either username, or password is incorrect')
+            })
+        },
+        alertCustomError(msg) {
+                this.$buefy.dialog.alert({
+                    title: 'Error',
+                    message: msg,
+                    type: 'is-danger',
+                    hasIcon: true,
+                    icon: 'times-circle',
+                    iconPack: 'fa',
+                    ariaRole: 'alertdialog',
+                    ariaModal: true
+                })
+            }
     }
 }
 
@@ -51,5 +76,8 @@ export default {
 .login {
     width: 70%;
     margin: 10px auto;
+}
+.fields-container {
+    margin: 50px 0;
 }
 </style>

@@ -1,31 +1,35 @@
 <template>
     <div class="signup">
-        <b-field label="First Name">
-        <b-input v-model="first_name"></b-input>
-        </b-field>
+        <h1 class="heading title is-2" >Sign Up</h1>
 
-        <b-field label="Last Name">
-        <b-input v-model="last_name"></b-input>
-        </b-field>
+        <div class="fields-container">
+            <b-field label="First Name">
+                <b-input v-model="first_name"></b-input>
+            </b-field>
 
-        <b-field label="Email">
-        <b-input v-model="email"></b-input>
-        </b-field>
+            <b-field label="Last Name">
+                <b-input v-model="last_name"></b-input>
+            </b-field>
 
-        <b-field label="Username">
-        <b-input v-model="username"></b-input>
-        </b-field>
+            <b-field label="Email">
+                <b-input v-model="email"></b-input>
+            </b-field>
 
-        <b-field label="Password">
-            <b-input type="password" v-model="password"></b-input>
-        </b-field>
+            <b-field label="Username">
+                <b-input v-model="username"></b-input>
+            </b-field>
 
-        <button class="button is-danger" v-on:click="handleSignup">Sign Up</button>
+            <b-field label="Password">
+                <b-input type="password" v-model="password"></b-input>
+            </b-field>
+        </div>
+        
+        <button class="button is-dark" v-on:click="handleSignup"><strong>Sign Up</strong></button>
 
-        <section>
+        <section class="secret-code-container">
             <b-collapse :open="false" aria-id="contentIdForA11y1">
             <button
-                class="button is-primary"
+                class="button is-warning"
                 slot="trigger"
                 aria-controls="contentIdForA11y1">
                 Have a secret code?
@@ -33,10 +37,14 @@
             <div class="notification">
                 <div class="content">
                 <h3>
-                    Write your sign up code here!
+                    Write your sign up code down below!
+                    <br>
+                    Don't have one?
+                    <br>
+                    Ask your instructor for your very own secret code
                 </h3>
                 <p>
-                <b-field label="secret code">
+                <b-field label="secret code here">
                 <b-input type="password" v-model="secret_code"></b-input>
                 </b-field>
                 </p>
@@ -147,5 +155,14 @@ export default {
 </script>
 
 <style>
+
+.signup {
+    width: 70%;
+    margin: 10px auto;
+}
+
+.secret-code-container {
+    margin: 50px;
+}
 
 </style>
