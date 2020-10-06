@@ -4,19 +4,15 @@
 
 ***
 
-## Project Snapshots STILL BEING WORKED ON
+## Project Snapshots
 
 
 <details class="cursor">
-<summary>Desktop View</summary>
-<img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.43.01_PM.png_20-49-28-430_hoyxmy.png" width="400" height= "150">
-<img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.43.35_PM.png_20-49-31-670_qbdnzm.png" width="400" height= "150">
-<img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.45.13_PM.png_20-49-35-575_safobt.png" width="400" height= "150">
-</details>
-<details class="cursor">
-<summary>Mobile View</summary>
-<img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.46.01_PM.png_20-49-38-775_hxojlh.png" width="200" height= "320">
-<img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.46.19_PM.png_20-49-41-642_fz764y.png" width="200" height= "320">
+<summary>Snapshots</summary>
+<img src="https://res.cloudinary.com/rosefc/image/upload/v1602002179/project%204/screenshots/Screen_Shot_2020-10-06_at_12.29.17_PM_jtxoac.png" width="400" height= "150">
+<img src="https://res.cloudinary.com/rosefc/image/upload/v1602002179/project%204/screenshots/Screen_Shot_2020-10-06_at_12.30.27_PM_aqlffl.png" width="400" height= "150">
+<img src="https://res.cloudinary.com/rosefc/image/upload/v1602002179/project%204/screenshots/Screen_Shot_2020-10-06_at_12.31.34_PM_pve14w.png" width="400" height= "150">
+<img src="https://res.cloudinary.com/rosefc/image/upload/v1602002179/project%204/screenshots/Screen_Shot_2020-10-06_at_12.32.23_PM_vkqlbe.png" width="400" height= "150">
 </details>
 
 ***
